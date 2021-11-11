@@ -24,7 +24,7 @@ class Subject(db.Model):
     subject=db.Column(db.String(200),nullable=False)
     marks=db.Column(db.Integer)
     students=db.relationship('Student',backref="students")
-    teachers=db.relationship('Teacher',backref="teacher")
+    # teachers=db.relationship('Teacher',backref="teacher")
 
 class Student(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -42,7 +42,7 @@ class Student(db.Model):
 class Teacher(db.Model):
     teacherId=db.Column(db.Integer,primary_key=True)
     email=db.Column(db.String(200),nullable=False)
-    subject_id=db.Column(db.Integer,db.ForeignKey('subject.subId'))
+    # subject_id=db.Column(db.Integer,db.ForeignKey('subject.subId'))
     
     
 class Answer(db.Model):
